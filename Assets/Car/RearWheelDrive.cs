@@ -9,7 +9,10 @@ public class RearWheelDrive : MonoBehaviour {
 	public float maxTorque = 300;
 	public GameObject wheelShape;
     public float WheelScale = 1;
-
+    public float Tourque = 0;
+    public float SteeringAngle = 0;
+    public float Speed = 0;
+    public bool InputControl = true;
 	// here we find all the WheelColliders down in the hierarchy
 	public void Start()
 	{
@@ -34,8 +37,16 @@ public class RearWheelDrive : MonoBehaviour {
 	// this helps us to figure our which wheels are front ones and which are rear
 	public void Update()
 	{
-		float angle = maxAngle * Input.GetAxis("Horizontal");
-		float torque = maxTorque * Input.GetAxis("Vertical");
+        Speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+
+        if (InputControl)
+        {
+            Tourque = Input.GetAxis("Vertical");
+            SteeringAngle = Input.GetAxis("Horizontal");
+        }
+
+        float angle = maxAngle * SteeringAngle; //Input.GetAxis("Horizontal");
+		float torque = maxTorque * Tourque;//Input.GetAxis("Vertical");
 
 		foreach (WheelCollider wheel in wheels)
 		{
