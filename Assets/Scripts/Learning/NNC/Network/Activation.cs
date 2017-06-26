@@ -1,4 +1,5 @@
-﻿using NNC.Network.Activations;
+﻿using Assets.Scripts.Learning.NNC.Network.Activations;
+using NNC.Network.Activations;
 
 
 namespace NNC.Network
@@ -17,6 +18,11 @@ namespace NNC.Network
         public static LinearActivation Linear()
         {
             return new LinearActivation();
+        }
+
+        public static TangensHyperbolic TangesHyperbolic()
+        {
+            return new TangensHyperbolic();
         }
     }
 }

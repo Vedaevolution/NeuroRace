@@ -55,7 +55,7 @@ namespace NNC.Network.Layers
             {
                 var input = state.Item1;
 
-                Weights[n] = Weights[n] - 0.04f * gradient[n] * input;
+                Weights[n] = Weights[n] - 0.01f * gradient[n] * input;
             }
 
             if (LayerType != LayerType.Input)

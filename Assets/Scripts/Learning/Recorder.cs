@@ -17,6 +17,7 @@ public class Recorder : MonoBehaviour {
     public float DeltaTime;
     public List<DriveSnapShot> Record;
     public Button Button;
+    public Text ErrorText;
     public GameObject Car;
     private float _Time;
     private DenseLayer Network;
@@ -30,18 +31,24 @@ public class Recorder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+      
+	}
+
+    void FixedUpdate()
+    {
         if (_Recording)
         {
 
             var currenttime = Time.time;
 
-            if(currenttime - _Time > DeltaTime)
+            if (currenttime - _Time > DeltaTime)
             {
                 _Time = currenttime;
                 Record.Add(GrabDriveSnapShot());
             }
 
-        }else if (_NetDrive)
+        }
+        if (_NetDrive)
         {
 
             var drivecontroller = Car.GetComponent<RearWheelDrive>();
@@ -57,6 +64,8 @@ public class Recorder : MonoBehaviour {
 
             drivecontroller.SteeringAngle = result[0];
             drivecontroller.Tourque = result[1];
+       
+ 
 
 
         }
@@ -65,7 +74,7 @@ public class Recorder : MonoBehaviour {
             var drivecontroller = Car.GetComponent<RearWheelDrive>();
             drivecontroller.InputControl = true;
         }
-	}
+    }
 
     DriveSnapShot GrabDriveSnapShot()
     {
@@ -135,9 +144,10 @@ public class Recorder : MonoBehaviour {
 
     IEnumerator TrainNetwork()
     {
-        var inputlayer = new DenseLayer(30, 4, Activation.Sigmoid());
-        var hiddenlayer1 = new DenseLayer(inputlayer, Activation.Sigmoid(), 50, LayerType.Hidden);
-        var outputlayer = new DenseLayer(hiddenlayer1, Activation.Linear(), 2, LayerType.Output);
+        var inputlayer = new DenseLayer(10, 4, Activation.Sigmoid());
+        var hiddenlayer1 = new DenseLayer(inputlayer, Activation.Sigmoid(), 10, LayerType.Hidden);
+        var hiddenlayer2 = new DenseLayer(hiddenlayer1, Activation.Linear(), 12, LayerType.Hidden);
+        var outputlayer = new DenseLayer(hiddenlayer2, Activation.TangesHyperbolic(), 2, LayerType.Output);
 
         Network = outputlayer;
 
@@ -166,10 +176,10 @@ public class Recorder : MonoBehaviour {
                 epocherror += (float)Math.Pow(sq.ElementSum(), 2);
                 outputlayer.Backward(dif);
             }
-            Debug.Log("Averge epoch error in epoch" + epoch + "is: " + epocherror);
+            ErrorText.text = epocherror.ToString();
         }
-        Debug.Log("Finished training!");
-
+        ErrorText.text = ("Finished!");
+        _Training = false;
     }
 
     void NetDrive()

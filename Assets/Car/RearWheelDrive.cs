@@ -7,6 +7,7 @@ public class RearWheelDrive : MonoBehaviour {
 
 	public float maxAngle = 30;
 	public float maxTorque = 300;
+    public float maxSpeed = 10f;
 	public GameObject wheelShape;
     public float WheelScale = 1;
     public float Tourque = 0;
@@ -37,7 +38,12 @@ public class RearWheelDrive : MonoBehaviour {
 	// this helps us to figure our which wheels are front ones and which are rear
 	public void Update()
 	{
-        Speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        var rigid = gameObject.GetComponent<Rigidbody>();
+        Speed = rigid.velocity.magnitude;
+
+        if (Speed > maxSpeed) {
+            rigid.velocity = rigid.velocity.normalized * maxSpeed;
+        }
 
         if (InputControl)
         {

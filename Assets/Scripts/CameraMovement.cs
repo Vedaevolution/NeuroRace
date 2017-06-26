@@ -12,11 +12,11 @@ public class CameraMovement : MonoBehaviour {
         _Distance = transform.position - Car.transform.position;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        var dif = Vector3.Lerp(gameObject.transform.position, Car.transform.position + _Distance, 1 * Time.deltaTime);
+    private void LateUpdate()
+    {
+        var dif = Car.transform.position + _Distance;
         //dif.y = gameObject.transform.position.y;
         gameObject.transform.position = dif;
-	}
-		
+    }
+
 }
