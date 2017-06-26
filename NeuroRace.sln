@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroRace.Plugins", "NeuroRace.Plugins.csproj", "{E8C0F1A3-05D9-6C4A-3B2D-AF64EEEFA2AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroRace", "NeuroRace.csproj", "{6E1C1946-D56B-BEE4-FB0E-A118EC4086A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroRace.Editor.Plugins", "NeuroRace.Editor.Plugins.csproj", "{D78A9D77-0FF0-AC28-B74A-AD6357A766AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuroRace.Editor", "NeuroRace.Editor.csproj", "{6458F5A6-51B3-5D7E-A7E1-7B23A38307EF}"
 EndProject
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8C0F1A3-05D9-6C4A-3B2D-AF64EEEFA2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8C0F1A3-05D9-6C4A-3B2D-AF64EEEFA2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8C0F1A3-05D9-6C4A-3B2D-AF64EEEFA2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8C0F1A3-05D9-6C4A-3B2D-AF64EEEFA2AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E1C1946-D56B-BEE4-FB0E-A118EC4086A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E1C1946-D56B-BEE4-FB0E-A118EC4086A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E1C1946-D56B-BEE4-FB0E-A118EC4086A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E1C1946-D56B-BEE4-FB0E-A118EC4086A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D78A9D77-0FF0-AC28-B74A-AD6357A766AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D78A9D77-0FF0-AC28-B74A-AD6357A766AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D78A9D77-0FF0-AC28-B74A-AD6357A766AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D78A9D77-0FF0-AC28-B74A-AD6357A766AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6458F5A6-51B3-5D7E-A7E1-7B23A38307EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6458F5A6-51B3-5D7E-A7E1-7B23A38307EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6458F5A6-51B3-5D7E-A7E1-7B23A38307EF}.Release|Any CPU.ActiveCfg = Release|Any CPU

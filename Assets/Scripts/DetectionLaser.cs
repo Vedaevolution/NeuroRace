@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectionLaser : MonoBehaviour {
 
+    public string Name;
     public float MaxDistance = 20;
     public float Distance = 0;
     private LineRenderer _LR;
@@ -16,16 +17,17 @@ public class DetectionLaser : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         RaycastHit hit;
-        _LR.SetPosition(0, transform.position);
+        _LR.SetPosition(0, Vector3.zero);
   
         if (Physics.Raycast(transform.position, transform.forward.normalized, out hit, MaxDistance))
         {
-            _LR.SetPosition(1, hit.point);
+            _LR.SetPosition(1, transform.InverseTransformPoint(hit.point));
             Distance = Vector3.Distance(gameObject.transform.position, hit.point);
         }
         else
         {
-            _LR.SetPosition(1, transform.position + transform.forward.normalized * MaxDistance);
+            var laserpos = transform.position + transform.forward.normalized * MaxDistance;
+            _LR.SetPosition(1, transform.InverseTransformPoint(laserpos));
         }
 	}
 }
