@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts.Learning.NNC.Network.Activations
+namespace NNC.Network.Activations
 {
     public class TangensHyperbolic : Activation
     {

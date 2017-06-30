@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Learning\DriveSnapShot.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Activation.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Activations\LinearActivation.cs" />
+    <Compile Include="Assets\Scripts\Learning\NNC\Network\Activations\ReLU.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Activations\SigmoidActivation.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Activations\TangensHyperbolic.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Layer.cs" />
@@ -91,6 +92,9 @@
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Layers\Tuple.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Tensor.cs" />
     <Compile Include="Assets\Scripts\Learning\NNC\Network\Tensors\Tensor1D.cs" />
+    <Compile Include="Assets\Scripts\Learning\QLearning\Actions.cs" />
+    <Compile Include="Assets\Scripts\Learning\QLearning\Qtraining.cs" />
+    <Compile Include="Assets\Scripts\Learning\QLearning\Transition.cs" />
     <Compile Include="Assets\Scripts\Learning\Recorder.cs" />
     <Compile Include="Assets\Scripts\Learning\Serializer.cs" />
   </ItemGroup>

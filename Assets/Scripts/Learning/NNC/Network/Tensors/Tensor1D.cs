@@ -36,6 +36,12 @@ namespace NNC.Network.Tensors
             }
         }
 
+        public List<float> Tolist()
+        {
+            var list = new List<float>(_Data);
+            return list;
+        }
+
         public float ElementSum()
         {
             float sum = 0;

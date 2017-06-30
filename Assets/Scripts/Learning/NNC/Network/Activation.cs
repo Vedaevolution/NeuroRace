@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Learning.NNC.Network.Activations;
-using NNC.Network.Activations;
+﻿using NNC.Network.Activations;
 
 
 namespace NNC.Network
@@ -23,6 +22,11 @@ namespace NNC.Network
         public static TangensHyperbolic TangesHyperbolic()
         {
             return new TangensHyperbolic();
+        }
+
+        public static ReLU ReLU()
+        {
+            return new  ReLU();
         }
     }
 }

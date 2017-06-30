@@ -14,6 +14,7 @@ public class RearWheelDrive : MonoBehaviour {
     public float SteeringAngle = 0;
     public float Speed = 0;
     public bool InputControl = true;
+    public bool Collided = false;
 	// here we find all the WheelColliders down in the hierarchy
 	public void Start()
 	{
@@ -78,4 +79,12 @@ public class RearWheelDrive : MonoBehaviour {
 
 		}
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name.Contains("Track"))
+        {
+            Collided = true;
+        }
+    }
 }
